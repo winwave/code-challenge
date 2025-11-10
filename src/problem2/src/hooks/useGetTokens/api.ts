@@ -20,7 +20,6 @@ const TokensResponseSchema = z.array(TokenSchema);
 export const fetchTokenPrices = async (): Promise<Token[]> => {
   try {
     const response = await fetch(API_URL);
-    console.log(response);
     if (response.status > 400) {
       throw new Error(`Network error: ${response.status} ${response.statusText}`);
     }

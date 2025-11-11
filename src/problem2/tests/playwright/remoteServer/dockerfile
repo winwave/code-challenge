@@ -1,0 +1,6 @@
+FROM mcr.microsoft.com/playwright:v1.51.1 AS playwright-server
+WORKDIR /src
+RUN npm init -y
+RUN npm install @playwright/test@1.51.1
+COPY index.js playwrightRemoteServer.js
+ENTRYPOINT ["node", "playwrightRemoteServer.js"]

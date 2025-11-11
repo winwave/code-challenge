@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  playwright-server:
+    build:
+      dockerfile: ./dockerfile
+      context: .
+      target: playwright-server
+    ports:
+      - 1010:1010
+      - 1011:1011
+      - 1012:1012
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

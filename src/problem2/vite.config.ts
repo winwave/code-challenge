@@ -10,4 +10,11 @@ export default defineConfig({
     setupFiles: './src/setupTests.ts',
     css: true,
   },
+  server: {
+    host: true,
+    allowedHosts: [
+      'host.docker.internal',
+    ],
+  }
+
 })
